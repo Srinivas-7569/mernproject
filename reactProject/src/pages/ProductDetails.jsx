@@ -5,6 +5,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
+  const [added, setAdded] = useState(false); // ✅ for animation
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -20,6 +21,10 @@ const ProductDetails = () => {
       const updatedCart = [...existingCart, { ...product, quantity: 1 }];
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
+
+    // ✅ Show animated feedback
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
   };
 
   const handleViewCart = () => {
@@ -59,9 +64,11 @@ const ProductDetails = () => {
           <div className="flex gap-4 mt-6">
             <button
               onClick={handleAddToCart}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+              className={`${
+                added ? "bg-green-600" : "bg-blue-600 hover:bg-blue-700"
+              } text-white px-4 py-2 rounded-lg transition-all duration-300`}
             >
-              Add to Cart
+              {added ? "✓ Added" : "Add to Cart"}
             </button>
 
             <button
@@ -78,4 +85,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-    

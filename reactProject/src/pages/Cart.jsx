@@ -36,8 +36,11 @@ const Cart = () => {
   );
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-br from-indigo-700 via-purple-700 to-indigo-800 p-8 text-white">
+      
       <h2 className="text-3xl font-bold mb-6 text-center">🛒 Your Cart</h2>
+      
 
       {cartItems.length === 0 ? (
         <p className="text-center text-lg">Cart is empty.</p>
@@ -93,6 +96,9 @@ const Cart = () => {
             </button>
           </div>
         </div>
+
+
+
       )}
     </div>
   );
