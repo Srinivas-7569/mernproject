@@ -1,0 +1,6 @@
+npm i react-router
+npm create vite@latest
+ npm install tailwindcss @tailwindcss/vite
+ npm install
+ npm run dev
+ 
