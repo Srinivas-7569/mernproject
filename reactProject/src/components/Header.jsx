@@ -9,7 +9,7 @@ function Header() {
     e.preventDefault();
     if (searchTerm.trim()) {
       navigate(`/category/${searchTerm.toLowerCase()}`);
-      setSearchTerm(""); // clear input
+      setSearchTerm(""); 
     }
   };
 

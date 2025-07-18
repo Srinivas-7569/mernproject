@@ -5,7 +5,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
-  const [added, setAdded] = useState(false); // ✅ for animation
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -18,11 +18,10 @@ const ProductDetails = () => {
     const isAlreadyInCart = existingCart.find((item) => item.id === product.id);
 
     if (!isAlreadyInCart) {
-      const updatedCart = [...existingCart, { ...product, quantity: 1 }];
+      const updatedCart = [...existingCart, { ...product, quantity: 10 }];
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
 
-    // ✅ Show animated feedback
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };

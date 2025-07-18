@@ -1,4 +1,4 @@
-// App.jsx
+ 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Categories from "./pages/Categories";
@@ -14,7 +14,6 @@ function App() {
         <Route path="/category/:name" element={<CategoryProducts />} />{" "}
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
-        {/* <- this is required */}
       </Routes>
     </BrowserRouter>
   );

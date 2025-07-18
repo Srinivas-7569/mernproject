@@ -1,4 +1,4 @@
-// src/pages/Categories.jsx
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
